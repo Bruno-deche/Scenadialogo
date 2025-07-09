@@ -19,36 +19,25 @@ import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 const ProductCard = ({ item, type }) => {
   const navigate = useNavigate();
 
-  // Stato iniziale: likes dal localStorage
   const [likes, setLikes] = useState(() => {
     return parseInt(localStorage.getItem(`${item.id}_likes`)) || 0;
   });
 
-  // Stato iniziale: dislikes dal localStorage
   const [dislikes, setDislikes] = useState(() => {
     return parseInt(localStorage.getItem(`${item.id}_dislikes`)) || 0;
   });
 
-  /**
-   * Reindirizza alla pagina dettaglio del prodotto
-   */
   const handleDetail = () => {
     navigate(`/${type}/${item.id}`);
   };
 
-  /**
-   * Aumenta i likes e aggiorna il localStorage
-   */
   const handleLike = (e) => {
-    e.stopPropagation(); // Evita il click sulla card
+    e.stopPropagation();
     const newLikes = likes + 1;
     setLikes(newLikes);
     localStorage.setItem(`${item.id}_likes`, newLikes);
   };
 
-  /**
-   * Aumenta i dislikes e aggiorna il localStorage
-   */
   const handleDislike = (e) => {
     e.stopPropagation();
     const newDislikes = dislikes + 1;
@@ -72,11 +61,17 @@ const ProductCard = ({ item, type }) => {
           src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
           alt={item.title || item.name}
           className="mb-3 rounded img-fluid"
-          style={{ maxHeight: "360px", objectFit: "cover" }}
+          style={{
+            maxHeight: "360px",
+            width: "100%",
+            objectFit: "contain",
+            backgroundColor: "black",
+            borderRadius: "0.5rem"
+          }}
         />
       )}
 
-      {/* Titolo del contenuto */}
+      {/* Titolo */}
       <h5 className="text-white">{item.title || item.name}</h5>
 
       {/* Breve descrizione */}
@@ -89,7 +84,7 @@ const ProductCard = ({ item, type }) => {
         Voto IMDb: {item.vote_average ? item.vote_average.toFixed(1) : "N/A"} / 10
       </div>
 
-      {/* Stelle di valutazione */}
+      {/* Stelle valutazione */}
       <div style={{ marginBottom: "0.5rem", display: "flex", alignItems: "center" }}>
         <Rating
           name={`rating-${item.id}`}
@@ -101,23 +96,17 @@ const ProductCard = ({ item, type }) => {
         />
       </div>
 
-      {/* Pulsanti like/dislike */}
+      {/* Pulsanti Like/Dislike */}
       <div className="d-flex justify-content-between mb-2">
-        <button
-          onClick={handleLike}
-          className="btn btn-outline-success btn-sm"
-        >
+        <button onClick={handleLike} className="btn btn-outline-success btn-sm">
           <FaThumbsUp className="me-1" /> {likes}
         </button>
-        <button
-          onClick={handleDislike}
-          className="btn btn-outline-danger btn-sm"
-        >
+        <button onClick={handleDislike} className="btn btn-outline-danger btn-sm">
           <FaThumbsDown className="me-1" /> {dislikes}
         </button>
       </div>
 
-      {/* Pulsante accessibile per i dettagli */}
+      {/* Pulsante Dettagli */}
       <button
         onClick={(e) => {
           e.stopPropagation();
@@ -133,6 +122,7 @@ const ProductCard = ({ item, type }) => {
 };
 
 export default ProductCard;
+
 
 
 
