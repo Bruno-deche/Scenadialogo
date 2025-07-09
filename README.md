@@ -1,6 +1,14 @@
 
 # 🎬 ScenaDialogo
 
+![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5.x-fastlight?logo=vite)
+![Redux](https://img.shields.io/badge/Redux_Toolkit-async-purple?logo=redux)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-styled-blue?logo=tailwindcss)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+
+
 **ScenaDialogo** è un'applicazione React sviluppata per l’esame finale del corso di *Front-End Programming*. Il progetto simula una piattaforma di streaming in stile Netflix/Disney+, includendo funzionalità di autenticazione, navigazione dinamica, interazioni sociali e gestione avanzata dello stato con Redux.
 
 ---
