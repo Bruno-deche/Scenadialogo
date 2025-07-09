@@ -141,7 +141,8 @@ src/
 1. **Clona il repository**
 
 ```bash
-git clone https://github.com/tuo-username/scenadialogo.git
+git clone https://github.com/Bruno-deche/Scenadialogo.git
+
 ```
 
 2. **Installa le dipendenze**

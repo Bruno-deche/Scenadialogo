@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vite
+.vite/
+
+# Output dei test (se mai userai Jest o simili)
+coverage/
+
+# Environment variables
+.env
+.env.*.local
+
+# File lock (se non usi Yarn o pnpm)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
