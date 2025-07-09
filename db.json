@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Administrator",
+      "email": "admin@streamnow.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Mario Rossi",
+      "email": "user@streamnow.com",
+      "password": "user123",
+      "role": "community"
+    }
+  ]
+}
